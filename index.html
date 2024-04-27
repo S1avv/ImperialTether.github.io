@@ -21,7 +21,7 @@
         width: 400px;
         height: 400px;
         border-radius: 50%;
-        background-color: red;
+        background-color: blue;
         transition: all 0.2s ease-in-out;
     }
     
@@ -47,7 +47,10 @@
     let coins = localStorage.getItem('coins') || 0;
     document.getElementById('counter').innerText = 'Монет: ' + coins;
 
-    document.getElementById("circle").onclick = function() {
+    document.getElementById("circle").addEventListener("touchstart", function(event) {
+        // Отменяем стандартное поведение браузера
+        event.preventDefault();
+
         // Добавляем монету при нажатии на круг
         coins++;
         document.getElementById('counter').innerText = 'Монет: ' + coins;
@@ -60,7 +63,7 @@
         setTimeout(() => {
             this.classList.remove("shrink");
         }, 70);
-    };
+    });
 </script>
 </body>
 </html>
