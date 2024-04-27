@@ -73,12 +73,13 @@
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-    var WebApp = window.Telegram.WebApp;
-    
-    if (WebApp && WebApp.WebAppUser && WebApp.WebAppUser.username) {
+    window.onload = function() {
+        var WebApp = window.Telegram.WebApp;
+        
+
         WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
         document.getElementById('userId').innerText = `ID: ${WebApp.WebAppUser.id}`;
-    }
+    };
 </script>
 
 </body>
