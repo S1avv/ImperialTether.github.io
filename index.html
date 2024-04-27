@@ -74,11 +74,10 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
     window.onload = function() {
-        var WebApp = window.Telegram.WebApp;
-        
+        let tg = window.Telegram.WebApp;
 
-        WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
-        document.getElementById('userId').innerText = `ID: ${WebApp.WebAppUser.id}`;
+        WebApp.showAlert(`Добро пожаловать, @${tg.WebAppUser.username}.`);
+        document.getElementById('userId').innerText = `ID: ${tg.WebAppUser.id}`;
     };
 </script>
 
