@@ -45,12 +45,12 @@
 <script>
     // Проверяем, есть ли значение в локальном хранилище
     let coins = localStorage.getItem('coins') || 0;
-    document.getElementById('counter').innerText = 'Coins: ' + coins;
+    document.getElementById('counter').innerText = 'Монет: ' + coins;
 
     document.getElementById("circle").onclick = function() {
         // Добавляем монету при нажатии на круг
         coins++;
-        document.getElementById('counter').innerText = 'Coins: ' + coins;
+        document.getElementById('counter').innerText = 'Монет: ' + coins;
 
         // Сохраняем количество монет в локальное хранилище
         localStorage.setItem('coins', coins);
