@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Circle</title>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: blue;
+        transition: all 0.2s ease-in-out;
+    }
+    
+    #circle.shrink {
+        transform: scale(0.5);
+    }
+</style>
+</head>
+<body>
+<div id="circle"></div>
+<script>
+    document.getElementById("circle").onclick = function() {
+        this.classList.add("shrink");
+        setTimeout(() => {
+            this.classList.remove("shrink");
+        }, 200);
+    };
+</script>
+</body>
+</html>
