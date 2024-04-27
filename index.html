@@ -73,12 +73,11 @@
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-    window.onload = function() {
-        let tg = window.Telegram.WebApp;
+    let tg = window.Telegram.WebApp;
 
-        document.getElementById('userId').innerText = `Name: ${tg.WebAppUser.username}`;
-
-    };
+    tg.expand();
+    
+    document.getElementById('userId').innerText = 'Name: ${tg.initDataUnsafe.user.username}';
 </script>
 
 </body>
