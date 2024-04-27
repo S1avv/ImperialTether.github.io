@@ -76,8 +76,11 @@
     window.onload = function() {
         let tg = window.Telegram.WebApp;
 
-        WebApp.showAlert(`Добро пожаловать, @${tg.WebAppUser.username}.`);
-        document.getElementById('user_name').innerText = `Name: ${tg.WebAppUser.user_name}`;
+        if (tg && tg.WebAppUser && tg.WebAppUser.username) {
+            document.getElementById('userId').innerText = `Name: ${tg.WebAppUser.username}`;
+        } else {
+            document.getElementById('userId').innerText = 'Name: none';
+        }
     };
 </script>
 
