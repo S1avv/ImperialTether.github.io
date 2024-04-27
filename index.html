@@ -11,8 +11,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
-        background-color: #222;
+        position: relative; /* Добавлено для позиционирования */
+        background-color: #222; /* Цвет темного фона */
+        touch-action: manipulation; /* Отключаем стандартное поведение прокрутки и масштабирования */
+        user-select: none; /* Запрещаем выделение текста */
     }
     
     #circle {
@@ -31,7 +33,7 @@
         position: absolute;
         top: 15%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); /* Центрируем текст по вертикали и горизонтали */
         color: white;
         font-size: 24px;
     }
@@ -41,15 +43,19 @@
 <div id="circle"></div>
 <div id="counter">Coins: 0</div>
 <script>
+    // Проверяем, есть ли значение в локальном хранилище
     let coins = localStorage.getItem('coins') || 0;
     document.getElementById('counter').innerText = 'Coins: ' + coins;
 
     document.getElementById("circle").onclick = function() {
+        // Добавляем монету при нажатии на круг
         coins++;
         document.getElementById('counter').innerText = 'Coins: ' + coins;
 
+        // Сохраняем количество монет в локальное хранилище
         localStorage.setItem('coins', coins);
 
+        // Анимация уменьшения круга
         this.classList.add("shrink");
         setTimeout(() => {
             this.classList.remove("shrink");
