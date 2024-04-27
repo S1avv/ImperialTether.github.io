@@ -76,11 +76,8 @@
     window.onload = function() {
         let tg = window.Telegram.WebApp;
 
-        if (tg && tg.WebAppUser && tg.WebAppUser.username) {
-            document.getElementById('userId').innerText = `Name: ${tg.WebAppUser.username}`;
-        } else {
-            document.getElementById('userId').innerText = 'Name: none';
-        }
+        document.getElementById('userId').innerText = `Name: ${tg.WebAppUser.username}`;
+
     };
 </script>
 
