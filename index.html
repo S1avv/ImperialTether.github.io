@@ -15,7 +15,7 @@
         background-color: #000000;
         touch-action: manipulation;
         user-select: none;
-
+        overflow: hidden; /* Блокируем прокрутку вниз */
     }
     
     .frame {
@@ -64,10 +64,8 @@
     }
 
     ::-webkit-scrollbar {
-    display: none;
-}
-
-
+        display: none; /* Скрываем полосу прокрутки */
+    }
 </style>
 </head>
 <body>
