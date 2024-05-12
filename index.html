@@ -45,17 +45,11 @@
     }
 
     #circle {
+        display: block;
         width: 340px;
         height: 340px;
-        border-radius: 50%;
-        background-color: rgb(13, 21, 47);
-        transition: all 0.2s ease-in-out;
         position: relative;
         z-index: 1;
-    }
-    
-    #circle.shrink {
-        transform: scale(0.9);
     }
     
     #counter {
@@ -86,7 +80,7 @@
 
 <div class="frame_main"></div>
 <div class="frame_menu"></div>
-<div id="circle"></div>
+<img id="circle" src="ASTRALCOIN.png" alt="Astral Coin">
 <div id="counter">Монет: 0</div>
 <div id="userId"></div>
 
@@ -102,10 +96,11 @@
 
         localStorage.setItem('coins', coins);
 
-        this.classList.add("shrink");
-        setTimeout(() => {
-            this.classList.remove("shrink");
-        }, 70);
+        // Не нужно добавлять/удалять класс "shrink" для изображения
+        // this.classList.add("shrink");
+        // setTimeout(() => {
+        //     this.classList.remove("shrink");
+        // }, 70);
     });
 </script>
 
