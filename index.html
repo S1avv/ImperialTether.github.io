@@ -30,6 +30,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
+        box-shadow: 0 0 30px 10px rgba(21, 174, 216, 0.5);
     }
     
     .frame_menu {
@@ -50,6 +51,18 @@
         height: 340px;
         position: relative;
         z-index: 1;
+    }
+    
+    @keyframes shrink {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0.9);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
     
     #counter {
@@ -96,11 +109,10 @@
 
         localStorage.setItem('coins', coins);
 
-        // Не нужно добавлять/удалять класс "shrink" для изображения
-        // this.classList.add("shrink");
-        // setTimeout(() => {
-        //     this.classList.remove("shrink");
-        // }, 70);
+        this.style.animation = 'shrink 0.4s ease-in-out';
+        setTimeout(() => {
+            this.style.animation = 'none';
+        }, 400);
     });
 </script>
 
