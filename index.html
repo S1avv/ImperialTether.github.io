@@ -12,17 +12,32 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        background-color: #222;
+        background-color: #000000;
         touch-action: manipulation;
         user-select: none;
+
+    }
+    
+    .frame {
+        width: 400px;
+        height: 780px;
+        border-radius: 80px;
+        background-color: rgb(28, 28, 28);
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
     }
     
     #circle {
         width: 340px;
         height: 340px;
         border-radius: 50%;
-        background-color: blue;
+        background-color: rgb(44, 71, 150);
         transition: all 0.2s ease-in-out;
+        position: relative;
+        z-index: 1;
     }
     
     #circle.shrink {
@@ -36,6 +51,7 @@
         transform: translate(-50%, -50%);
         color: white;
         font-size: 24px;
+        z-index: 2;
     }
 
     #userId {
@@ -44,10 +60,19 @@
         left: 50%;
         transform: translateX(-50%);
         color: white;
+        z-index: 2;
     }
+
+    ::-webkit-scrollbar {
+    display: none;
+}
+
+
 </style>
 </head>
 <body>
+
+<div class="frame"></div>
 <div id="circle"></div>
 <div id="counter">Монет: 0</div>
 <div id="userId"></div>
