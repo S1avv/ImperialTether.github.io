@@ -15,6 +15,7 @@
         background-color: #000000;
         touch-action: manipulation;
         user-select: none;
+        overscroll-behavior: none;
     }
     
     .frame_main {
@@ -112,6 +113,8 @@
     let tg = window.Telegram.WebApp;
 
     tg.expand();
+    
+    document.getElementById('userId').innerText = `Name: ${tg.initDataUnsafe.user.username}`;
 </script>
 
 </body>
