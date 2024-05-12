@@ -109,10 +109,12 @@
 
         localStorage.setItem('coins', coins);
 
-        this.style.animation = 'shrink 0.4s ease-in-out';
+        // Добавляем класс с анимацией
+        this.classList.add("shrink");
+
         setTimeout(() => {
-            this.style.animation = 'none';
-        }, 400);
+            this.classList.remove("shrink");
+        }, 100);
     });
 </script>
 
