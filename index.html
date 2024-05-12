@@ -17,19 +17,31 @@
         user-select: none;
     }
     
-    .frame {
+    .frame_main {
         width: 400px;
         height: 680px;
         border-top-left-radius: 80px;
         border-top-right-radius: 80px;
         background-color: rgb(28, 28, 28);
         position: absolute;
-        top: 56%;
+        top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
     }
     
+    .frame_menu {
+        width: 350px;
+        height: 70px;
+        border-radius: 20px;
+        background-color: rgba(56, 56, 56, 0.277);
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
     #circle {
         width: 340px;
         height: 340px;
@@ -64,13 +76,14 @@
     }
 
     ::-webkit-scrollbar {
-        display: none; /* Скрываем полосу прокрутки */
+        display: none;
     }
 </style>
 </head>
 <body>
 
-<div class="frame"></div>
+<div class="frame_main"></div>
+<div class="frame_menu"></div>
 <div id="circle"></div>
 <div id="counter">Монет: 0</div>
 <div id="userId"></div>
