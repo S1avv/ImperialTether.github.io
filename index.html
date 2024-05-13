@@ -113,7 +113,7 @@
 
         setTimeout(() => {
             this.classList.remove("shrink");
-        }, 250);
+        }, 300);
     });
 
     document.getElementById("circle").addEventListener("touchstart", function(event) {
@@ -128,7 +128,7 @@
     plusOneElement.style.top = event.touches[0].clientY + "px";
     plusOneElement.style.left = event.touches[0].clientX + "px";
     plusOneElement.style.color = "white";
-    plusOneElement.style.fontSize = "60px";
+    plusOneElement.style.fontSize = "72px";
     plusOneElement.style.zIndex = "9999";
     document.body.appendChild(plusOneElement);
 
