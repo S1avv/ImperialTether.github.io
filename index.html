@@ -130,21 +130,19 @@
     plusOneElement.style.top = event.touches[0].clientY + "px";
     plusOneElement.style.left = event.touches[0].clientX + "px";
     plusOneElement.style.color = "white";
+    plusOneElement.style.fontSize = "24px";
     plusOneElement.style.zIndex = "9999";
     document.body.appendChild(plusOneElement);
 
-    // Удаляем элемент через 1 секунду
     setTimeout(() => {
         document.body.removeChild(plusOneElement);
-    }, 1000);
+    }, 700);
 
     // Обновляем счетчик монет
     document.getElementById('counter').innerText = 'Монет: ' + coins;
 
-    // Добавляем класс с анимацией
     this.classList.add("shrink");
 
-    // Удаляем класс анимации через 100 миллисекунд
     setTimeout(() => {
         this.classList.remove("shrink");
     }, 100);
