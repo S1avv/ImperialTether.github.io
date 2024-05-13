@@ -116,6 +116,40 @@
             this.classList.remove("shrink");
         }, 100);
     });
+
+    document.getElementById("circle").addEventListener("touchstart", function(event) {
+    event.preventDefault();
+
+    coins++;
+    localStorage.setItem('coins', coins);
+
+    // Создаем элемент для отображения "+1" на месте касания
+    let plusOneElement = document.createElement("div");
+    plusOneElement.innerText = "+1";
+    plusOneElement.style.position = "absolute";
+    plusOneElement.style.top = event.touches[0].clientY + "px";
+    plusOneElement.style.left = event.touches[0].clientX + "px";
+    plusOneElement.style.color = "white";
+    plusOneElement.style.zIndex = "9999";
+    document.body.appendChild(plusOneElement);
+
+    // Удаляем элемент через 1 секунду
+    setTimeout(() => {
+        document.body.removeChild(plusOneElement);
+    }, 1000);
+
+    // Обновляем счетчик монет
+    document.getElementById('counter').innerText = 'Монет: ' + coins;
+
+    // Добавляем класс с анимацией
+    this.classList.add("shrink");
+
+    // Удаляем класс анимации через 100 миллисекунд
+    setTimeout(() => {
+        this.classList.remove("shrink");
+    }, 100);
+});
+
 </script>
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
