@@ -109,12 +109,11 @@
 
         localStorage.setItem('coins', coins);
 
-        // Добавляем класс с анимацией
         this.classList.add("shrink");
 
         setTimeout(() => {
             this.classList.remove("shrink");
-        }, 100);
+        }, 250);
     });
 
     document.getElementById("circle").addEventListener("touchstart", function(event) {
